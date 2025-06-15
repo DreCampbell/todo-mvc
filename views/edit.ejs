@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page</title>
+    <script src="https://kit.fontawesome.com/4081cbc0e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <section>
+        <h1>Edit Todo</h1>
+        <section>
+            <ul>
+                <% todos.forEach( el => { %>
+                    <% if(el._id == todoID){ %>
+                        <li>
+                            <form action="/edit/update/<%= el._id%>" method='POST'>
+                                <input type="text" placeholder="Enter Todo Item" name='todoItem' value='<%= el.todo %>'>
+                                <button type="submit">Confirm</button>
+                                <a href="/todos">Cancel</a>
+                            </form>
+                        </li>
+                    <% } else{ %>
+                        <li class='todoItem' data-id='<%=el._id%>'>
+                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                            <a href="#" class='edit'> <i class="fa-solid fa-pen-to-square"></i> </a>
+                            <a href="#" class='del'> <i class="fa-solid fa-trash-can"></i> </a>
+                        </li>
+                    <% } %>
+                <% }) %> 
+            </ul>
+        </section>    
+    </section>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

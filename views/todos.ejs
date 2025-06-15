@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/4081cbc0e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <h1>Todos</h1>
@@ -13,7 +14,8 @@
     <% todos.forEach( el => { %>
         <li class='todoItem' data-id='<%=el._id%>'>
             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-            <span class='del'> Delete </span>
+            <span class='edit'> <i class="fa-solid fa-pen-to-square"></i> </span>
+            <span class='del'> <i class="fa-solid fa-trash-can"></i> </span>
         </li>
     <% }) %>    
     </ul>
@@ -25,6 +27,6 @@
         <input type="submit">
     </form>
 
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

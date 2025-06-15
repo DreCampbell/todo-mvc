@@ -8,3 +8,12 @@ h1{
 .not{
     text-decoration: underline;
 }
+.edit, .submit{
+    color: #32CD32;
+}
+.del, .cancel{
+    color: red;
+}
+span:hover{
+    cursor: pointer;
+}
